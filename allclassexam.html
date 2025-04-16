@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Class Exams | SSS Education</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e0f7ff, #ffffff);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation: fadeInBody 1s ease-in-out;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      background: #007bff;
+      color: white;
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      animation: slideDown 1s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    .class-buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    .class-button {
+      background: white;
+      color: #007bff;
+      padding: 20px;
+      border-radius: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
+      border: 2px solid #007bff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s, color 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .class-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 123, 255, 0.1);
+      transition: left 0.4s ease;
+      z-index: 0;
+    }
+
+    .class-button:hover::before {
+      left: 0;
+    }
+
+    .class-button:hover {
+      transform: translateY(-8px);
+      background: #007bff;
+      color: white;
+      box-shadow: 0 12px 25px rgba(0, 123, 255, 0.5);
+    }
+
+    .class-button span {
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f1faff;
+      color: #007bff;
+      font-size: 14px;
+      border-top: 1px solid #cce5ff;
+      animation: fadeInUp 2s ease;
+    }
+
+    /* Animations */
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .class-button {
+        font-size: 18px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📘 Start Your Class Exam</h1>
+    <p>Select your class below to begin your journey</p>
+  </header>
+
+  <div class="class-buttons">
+    <a href="exam-6th.html" class="class-button"><span>Class 6</span></a>
+    <a href="exam-7th.html" class="class-button"><span>Class 7</span></a>
+    <a href="exam-8th.html" class="class-button"><span>Class 8</span></a>
+    <a href="exam-9th.html" class="class-button"><span>Class 9</span></a>
+    <a href="exam-10th.html" class="class-button"><span>Class 10</span></a>
+    <a href="exam-11th.html" class="class-button"><span>Class 11</span></a>
+    <a href="exam-12th.html" class="class-button"><span>Class 12</span></a>
+  </div>
+
+  <footer>
+    © 2025 SSS Education | Smart Learning Platform
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class Dashboard - SSS Education</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e0f7fa, #fff);
+      color: #333;
+    }
+
+    header {
+      background: #004aad;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+header p {
+      font-size: 1.5rem;
+      margin-top: 5px;
+	  font-family: algirian;
+          }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+      font-family: Algerian;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #003580;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    nav a {
+      margin: 5px 10px;
+      background-color: #ffffff;
+      color: #003580;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #007bff;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1.page-title {
+      text-align: center;
+      color: #1e88e5;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      font-family: Algerian;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .section h2 {
+      color: #1565c0;
+      font-size: 1.8rem;
+      border-left: 6px solid #2196f3;
+      padding-left: 15px;
+      font-family: Algerian;
+   margin-right: 10px;
+      }
+
+    .class-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .class-card {
+      background: linear-gradient(145deg, #dfe9f3, #ffffff);
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background 0.3s;
+	  margin-top: 20px;
+    }
+
+    .class-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      background: linear-gradient(145deg, #e3f2fd, #ffffff);
+    }
+
+    .class-card h3 {
+      color: #003580;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .class-card a {
+      display: block;
+      text-decoration: none;
+      color: #003580;
+      margin: 10px 0;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .class-card a i {
+      margin-right: 8px;
+      color: #1e88e5;
+    }
+
+    .class-card a:hover {
+      color: #007bff;
+    }
+
+    @media (max-width: 768px) {
+      h1.page-title {
+        font-size: 2rem;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    }
+	
+	footer {
+  background-color: #003580;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 50px;
+  border-top: 5px solid #1e88e5;
+}
+
+footer strong {
+  color: #ffffff;
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SSS EDUCATION</h1>
+  <p>Smart Learning for Smart Students</p>
+</header>
+
+<nav>
+   <a href="index.html">Home</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="About.html">About</a>
+    <a href="Student.html">Student</a>
+    <a href="Notes.html" class="active">Notes</a>
+    <a href="Pdf.html">PDF</a>
+    <a href="Books.html">Books</a>
+    <a href="Class.html">Class</a>
+    <a href="Contact.html">Contact</a>
+  </nav>
+
+<div class="container">
+  <h1 class="page-title">📚 Class Dashboard - All Resources</h1>
+
+  <div class="section">
+    <h2><i class="fas fa-user-graduate"></i> Class-wise Access (6th to 12th)</h2>
+    <div class="class-box">
+
+      <!-- Example for Class 6 -->
+      <div class="class-card">
+        <h3>Class 6</h3>
+        <a href="#"><i class="fas fa-file-alt"></i>Notes</a>
+        <a href="#"><i class="fas fa-book"></i>Books</a>
+        <a href="#"><i class="fas fa-file-pdf"></i>PDFs</a>
+        <a href="#"><i class="fas fa-question-circle"></i>MCQs</a>
+        <a href="#"><i class="fas fa-video"></i>Videos</a>
+        <a href="#"><i class="fas fa-calculator"></i>Formulas</a>
+        <a href="#"><i class="fas fa-tools"></i>Study Tools</a>
+        <a href="#"><i class="fas fa-bell"></i>Alerts</a>
+        <a href="#"><i class="fas fa-chalkboard-teacher"></i>Online Classes</a>
+      </div>
+
+<div class="class-card">
+        <h3>Class 7</h3>
+        <a href="#"><i class="fas fa-file-alt"></i>Notes</a>
+        <a href="#"><i class="fas fa-book"></i>Books</a>
+        <a href="#"><i class="fas fa-file-pdf"></i>PDFs</a>
+        <a href="#"><i class="fas fa-question-circle"></i>MCQs</a>
+        <a href="#"><i class="fas fa-video"></i>Videos</a>
+        <a href="#"><i class="fas fa-calculator"></i>Formulas</a>
+        <a href="#"><i class="fas fa-tools"></i>Study Tools</a>
+        <a href="#"><i class="fas fa-bell"></i>Alerts</a>
+        <a href="#"><i class="fas fa-chalkboard-teacher"></i>Online Classes</a>
+      </div>
+
+
+
+
+
+<div class="class-card">
+        <h3>Class 8</h3>
+        <a href="#"><i class="fas fa-file-alt"></i>Notes</a>
+        <a href="#"><i class="fas fa-book"></i>Books</a>
+        <a href="#"><i class="fas fa-file-pdf"></i>PDFs</a>
+        <a href="#"><i class="fas fa-question-circle"></i>MCQs</a>
+        <a href="#"><i class="fas fa-video"></i>Videos</a>
+        <a href="#"><i class="fas fa-calculator"></i>Formulas</a>
+        <a href="#"><i class="fas fa-tools"></i>Study Tools</a>
+        <a href="#"><i class="fas fa-bell"></i>Alerts</a>
+        <a href="#"><i class="fas fa-chalkboard-teacher"></i>Online Classes</a>
+      </div>
+
+      	  	  	  
+	  
+	  <div class="class-card">
+        <h3>Class 9</h3>
+        <a href="#"><i class="fas fa-file-alt"></i>Notes</a>
+        <a href="#"><i class="fas fa-book"></i>Books</a>
+        <a href="#"><i class="fas fa-file-pdf"></i>PDFs</a>
+        <a href="#"><i class="fas fa-question-circle"></i>MCQs</a>
+        <a href="#"><i class="fas fa-video"></i>Videos</a>
+        <a href="#"><i class="fas fa-calculator"></i>Formulas</a>
+        <a href="#"><i class="fas fa-tools"></i>Study Tools</a>
+        <a href="#"><i class="fas fa-bell"></i>Alerts</a>
+        <a href="#"><i class="fas fa-chalkboard-teacher"></i>Online Classes</a>
+      </div>
+	  
+	  
+	  
+	  <div class="class-card">
+        <h3>Class 10</h3>
+        <a href="#"><i class="fas fa-file-alt"></i>Notes</a>
+        <a href="#"><i class="fas fa-book"></i>Books</a>
+        <a href="#"><i class="fas fa-file-pdf"></i>PDFs</a>
+        <a href="#"><i class="fas fa-question-circle"></i>MCQs</a>
+        <a href="#"><i class="fas fa-video"></i>Videos</a>
+        <a href="#"><i class="fas fa-calculator"></i>Formulas</a>
+        <a href="#"><i class="fas fa-tools"></i>Study Tools</a>
+        <a href="#"><i class="fas fa-bell"></i>Alerts</a>
+        <a href="#"><i class="fas fa-chalkboard-teacher"></i>Online Classes</a>
+      </div>
+	  
+	  
+	  
+	  <div class="class-card">
+        <h3>Class 11</h3>
+        <a href="#"><i class="fas fa-file-alt"></i>Notes</a>
+        <a href="#"><i class="fas fa-book"></i>Books</a>
+        <a href="#"><i class="fas fa-file-pdf"></i>PDFs</a>
+        <a href="#"><i class="fas fa-question-circle"></i>MCQs</a>
+        <a href="#"><i class="fas fa-video"></i>Videos</a>
+        <a href="#"><i class="fas fa-calculator"></i>Formulas</a>
+        <a href="#"><i class="fas fa-tools"></i>Study Tools</a>
+        <a href="#"><i class="fas fa-bell"></i>Alerts</a>
+        <a href="#"><i class="fas fa-chalkboard-teacher"></i>Online Classes</a>
+      </div>
+	  
+	  
+	  
+	  <div class="class-card">
+        <h3>Class 12</h3>
+        <a href="#"><i class="fas fa-file-alt"></i>Notes</a>
+        <a href="#"><i class="fas fa-book"></i>Books</a>
+        <a href="#"><i class="fas fa-file-pdf"></i>PDFs</a>
+        <a href="#"><i class="fas fa-question-circle"></i>MCQs</a>
+        <a href="#"><i class="fas fa-video"></i>Videos</a>
+        <a href="#"><i class="fas fa-calculator"></i>Formulas</a>
+        <a href="#"><i class="fas fa-tools"></i>Study Tools</a>
+        <a href="#"><i class="fas fa-bell"></i>Alerts</a>
+        <a href="#"><i class="fas fa-chalkboard-teacher"></i>Online Classes</a>
+      </div>	
+    </div>
+  </div>
+</div>
+<footer>
+  © 2025 SSS Education. All rights reserved.
+</footer>
+
+
+</body>
+</html>

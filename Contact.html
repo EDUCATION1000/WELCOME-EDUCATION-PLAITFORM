@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - SSS Education</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+
+    body {
+      background: linear-gradient(135deg, #e0f7fa, #ffffff);
+      color: #333;
+    }
+
+    header {
+      background: #004aad;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+	
+	header p {
+      font-size: 1.5rem;
+      margin-top: 5px;
+	  font-family: algirian;
+          }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-family: Algerian;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: #003580;
+      padding: 10px;
+    }
+
+    nav a {
+      margin: 5px;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background: white;
+      color: #003580;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #007bff;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    }
+
+    h1.page-title {
+      text-align: center;
+      font-family: Algerian;
+      color: #1e88e5;
+      margin-bottom: 30px;
+    }
+
+    .contact-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .contact-card {
+      background: linear-gradient(145deg, #dfe9f3, #ffffff);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      background: #e3f2fd;
+    }
+
+    .contact-card i {
+      font-size: 2rem;
+      color: #1e88e5;
+      margin-bottom: 10px;
+    }
+
+    .contact-form {
+      margin-bottom: 40px;
+	  
+	     }
+
+    .contact-form form {
+      display: grid;
+      gap: 20px;
+	  
+    }
+
+    .contact-form input, .contact-form textarea {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      width: 100%;
+	  font-family: algirian;
+    }
+
+    .contact-form button {
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: #007bff;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #0056b3;
+    }
+
+    .map, .hours, .social {
+      margin-bottom: 40px;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 15px;
+    }
+
+    .hours ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .hours li {
+      padding: 5px 0;
+      font-size: 1rem;
+    }
+
+    .social a {
+      font-size: 1.5rem;
+      margin-right: 15px;
+      color: #1e88e5;
+      transition: 0.3s;
+    }
+
+    .social a:hover {
+      color: #004aad;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        text-align: center;
+        width: 100%;
+      }
+    }
+	
+	footer {
+  background-color: #003580;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 50px;
+  border-top: 5px solid #1e88e5;
+}
+
+footer strong {
+  color: #ffffff;
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SSS EDUCATION</h1>
+  <p>Smart Learning for Smart Students</p>
+</header>
+
+<nav>
+   <a href="index.html">Home</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="About.html">About</a>
+    <a href="Student.html">Student</a>
+    <a href="Notes.html" class="active">Notes</a>
+    <a href="Pdf.html">PDF</a>
+    <a href="Books.html">Books</a>
+    <a href="Class.html">Class</a>
+    <a href="Contact.html">Contact</a>
+  </nav>
+<div class="container">
+  <h1 class="page-title">📞 Contact Us - We're Here to Help</h1>
+
+  <div class="contact-details">
+    <div class="contact-card"><i class="fas fa-phone-alt"></i><h3>Phone</h3><p>+91 9162592236</p></div>
+    <div class="contact-card"><i class="fas fa-envelope"></i><h3>Email</h3><p>ssseducation10000@gmail.com</p></div>
+    <div class="contact-card"><i class="fas fa-map-marker-alt"></i><h3>Location</h3><p>SSS Education, Ghorashahan  Road Dhaka</p></div>
+    <div class="contact-card"><i class="fas fa-globe"></i><h3>Website</h3><p>www.ssseducation.in</p></div>
+  </div>
+
+  <div class="contact-form">
+    <h2>📬 Send Us a Message</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <div class="hours">
+    <h2>⏰ Office Hours</h2>
+    <ul>
+      <li>Monday - Friday: 9:00 AM to 6:00 PM</li>
+      <li>Saturday: 10:00 AM to 2:00 PM</li>
+      <li>Sunday: Closed</li>
+    </ul>
+  </div>
+
+  <div class="social">
+    <h2>🔗 Connect with Us</h2>
+    <a href="#"><i class="fab fa-facebook-square"></i></a>
+    <a href="#"><i class="fab fa-instagram-square"></i></a>
+    <a href="#"><i class="fab fa-youtube-square"></i></a>
+    <a href="#"><i class="fab fa-whatsapp-square"></i></a>
+  </div>
+
+  <div class="map">
+    <h2>📍 Find Us on Map</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18..." allowfullscreen></iframe>
+  </div>
+</div>
+<footer>
+  <p>© 2025 <strong>SSS Education</strong>. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

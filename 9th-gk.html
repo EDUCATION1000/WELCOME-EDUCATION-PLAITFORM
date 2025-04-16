@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subject Notes - SSS Education</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f2f2f2;
+      padding: 40px 20px;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto 30px;
+    }
+
+    .top-bar h1 {
+      margin: 0;
+      color: #2c3e50;
+      font-size: 24px;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .back-button {
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.4);
+      color: #2c3e50;
+      border: 1px solid #ccc;
+      backdrop-filter: blur(8px);
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      margin-right: 20px;
+    }
+
+    .back-button:hover {
+      background: rgba(66, 165, 245, 0.2);
+      color: #1565c0;
+      transform: translateX(-3px);
+    }
+
+    #downloadBtn {
+      padding: 10px 20px;
+      background: linear-gradient(to right, #42a5f5, #7e57c2);
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    #downloadBtn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(to right, #1e88e5, #6a1b9a);
+    }
+
+ 
+  /* ... बाकी सभी styles वैसे के वैसे रहेंगे ... */
+
+  .notes-area {
+    background: #ffffff;
+    padding: 40px 50px;
+    margin: 0 auto 30px;
+    width: 794px; /* A4 width in px */
+    height: auto; /* Updated line: auto height based on content */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    color: #333;
+    overflow-y: auto;
+  }
+
+  /* ... बाकी styles वैसे के वैसे रहेंगे ... */
+
+
+    .notes-area h2, .notes-area h3 {
+      color: #2e3c52;
+    }
+
+    .notes-area ul {
+      margin-left: 20px;
+    }
+
+    .message-box {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      background: #e8eaf6;
+      color: #1a237e;
+      font-weight: bold;
+      padding: 15px 25px;
+      border-radius: 12px;
+      font-size: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <a href="Notes9th.html" class="back-button">⬅ Back</a>
+    <h1>📘 class 9th general knowledge Notes</h1>
+    <button id="downloadBtn">📥 Download PDF</button>
+  </div>
+
+  <div id="notesContent" class="notes-area">
+    <h2>Chapter 1: Introduction to MATH</h2>
+    <p>Science is the systematic study of the structure and behavior of the physical and natural world through observation and experiment. It helps us understand how the world around us works.</p>
+    
+    <h3>Importance of Science:</h3>
+    <ul>
+      <li>Helps in technological development</li>
+      <li>Improves quality of life</li>
+      <li>Solves real-world problems</li>
+    </ul>
+
+    <h3>Branches of Science:</h3>
+    <p>The main branches are Physics, Chemistry, and Biology. Each deals with different aspects of the natural world.</p>
+
+    <p>Stay tuned for more chapters and subjects to be added soon...</p>
+	<h2>Chapter 1: Introduction to MATH</h2>
+    <p>Science is the systematic study of the structure and behavior of the physical and natural world through observation and experiment. It helps us understand how the world around us works.</p>
+    
+    <h3>Importance of Science:</h3>
+    <ul>
+      <li>Helps in technological development</li>
+      <li>Improves quality of life</li>
+      <li>Solves real-world problems</li>
+    </ul>
+
+    <h3>Branches of Science:</h3>
+    <p>The main branches are Physics, Chemistry, and Biology. Each deals with different aspects of the natural world.</p>
+
+    <p>Stay tuned for more chapters and subjects to be added soon...</p>
+	<h2>Chapter 1: Introduction to MATH</h2>
+    <p>Science is the systematic study of the structure and behavior of the physical and natural world through observation and experiment. It helps us understand how the world around us works.</p>
+    
+    <h3>Importance of Science:</h3>
+    <ul>
+      <li>Helps in technological development</li>
+      <li>Improves quality of life</li>
+      <li>Solves real-world problems</li>
+    </ul>
+
+    <h3>Branches of Science:</h3>
+    <p>The main branches are Physics, Chemistry, and Biology. Each deals with different aspects of the natural world.</p>
+
+    <p>Stay tuned for more chapters and subjects to be added soon...</p>
+  </div>
+
+  <div class="message-box">
+    📢 This page will be updated with more notes from time to time. Keep checking back to get the latest content. <br><br>
+    📢 यह पेज समय-समय पर नए नोट्स के साथ अपडेट किया जाएगा। कृपया नवीनतम सामग्री के लिए बार-बार चेक करते रहें।
+  </div>
+
+  <script>
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      const element = document.getElementById('notesContent');
+      const opt = {
+        margin:       0.5,
+        filename:     'SSS EDUCATION CLASS 9TH GENERAL KNOWLEDGE-NOTES.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'px', format: [794, 1123], orientation: 'portrait' }
+      };
+      html2pdf().from(element).set(opt).save();
+    });
+  </script>
+
+</body>
+</html>

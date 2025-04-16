@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📹 Motivational Videos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1e88e5, #1976d2);
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      color: white;
+      font-size: 36px;
+      font-weight: 700;
+      margin-top: 40px;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 30px;
+      color: #fff;
+      border-bottom: 2px solid #ffca28;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      font-weight: 600;
+      text-align: center;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .video-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    .video-card {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .video-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .video-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .video-card img:hover {
+      transform: scale(1.1);
+    }
+
+    .video-card h4 {
+      font-size: 22px;
+      color: #1e88e5;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    .video-card p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .video-card .video-link {
+      display: inline-block;
+      background-color: #ffca28;
+      color: #1e88e5;
+      padding: 12px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .video-card .video-link:hover {
+      background-color: #1e88e5;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    /* Back Button */
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 15px 20px;
+      background-color: #ffca28;
+      color: #1e88e5;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #1e88e5;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="window.location.href='student.html';">
+    <i class="fa fa-arrow-left"></i> Back</button>
+
+  <div class="container">
+    <h2><i class="fa-solid fa-video"></i> प्रेरणादायक वीडियो</h2>
+
+    <!-- Motivational Video Details -->
+    <div class="section">
+      <h3 class="section-title">प्रेरणादायक वीडियो</h3>
+      <div class="video-cards">
+        <div class="video-card">
+          <img src="https://via.placeholder.com/300x200" alt="Video 1">
+          <h4>सफलता के लिए मेहनत</h4>
+          <p>यह वीडियो हमें सिखाता है कि सफलता केवल कठिन काम और मेहनत से प्राप्त होती है।</p>
+          <a href="#" class="video-link" target="_blank">वीडियो देखें</a>
+        </div>
+        <div class="video-card">
+          <img src="https://via.placeholder.com/300x200" alt="Video 2">
+          <h4>स्वयं में विश्वास</h4>
+          <p>यह वीडियो हमें प्रेरित करता है कि अगर हम स्वयं में विश्वास करते हैं, तो कोई भी लक्ष्य असंभव नहीं है।</p>
+          <a href="#" class="video-link" target="_blank">वीडियो देखें</a>
+        </div>
+        <div class="video-card">
+          <img src="https://via.placeholder.com/300x200" alt="Video 3">
+          <h4>कभी हार मत मानो</h4>
+          <p>यह वीडियो हमें सिखाता है कि हर मुश्किल से जूझते हुए हमें कभी हार नहीं माननी चाहिए।</p>
+          <a href="#" class="video-link" target="_blank">वीडियो देखें</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

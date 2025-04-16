@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class-wise Subject Resources</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f4f6;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Stylish Back Button */
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: linear-gradient(145deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 15px 30px;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    .back-btn:hover {
+      background: linear-gradient(145deg, #2575fc, #6a11cb);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+    .back-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+      padding: 20px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    .btn {
+      background-color: #fff;
+      border: 2px solid #007bff;
+      color: #007bff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+    .hidden {
+      display: none;
+    }
+    .resources {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+    .card button {
+      background-color: #28a745;
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      margin: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .card button:hover {
+      background-color: #218838;
+    }
+    .selected-info {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Back Button -->
+<button class="back-btn" onclick="window.location.href='student.html';">Back to Student Page</button>
+
+<header>
+  <h1>📚 Class-wise Subject Resources</h1>
+  <p>Smart Learning for Smart Students</p>
+</header>
+
+<div class="container">
+
+  <div class="section-title">Select Your Class</div>
+  <div class="button-group" id="class-buttons">
+    <button class="btn" onclick="showSubjects(6)">Class 6</button>
+    <button class="btn" onclick="showSubjects(7)">Class 7</button>
+    <button class="btn" onclick="showSubjects(8)">Class 8</button>
+    <button class="btn" onclick="showSubjects(9)">Class 9</button>
+    <button class="btn" onclick="showSubjects(10)">Class 10</button>
+    <button class="btn" onclick="showSubjects(11)">Class 11</button>
+    <button class="btn" onclick="showSubjects(12)">Class 12</button>
+  </div>
+
+  <div class="selected-info hidden" id="selected-class-info">Selected Class: </div>
+
+  <div class="section-title hidden" id="subject-title">Select Subject</div>
+  <div class="button-group hidden" id="subject-buttons">
+    <button class="btn" onclick="showResources('Mathematics')">Mathematics</button>
+    <button class="btn" onclick="showResources('Science')">Science</button>
+    <button class="btn" onclick="showResources('English')">English</button>
+    <button class="btn" onclick="showResources('SST')">SST</button>
+    <button class="btn" onclick="showResources('Hindi')">Hindi</button>
+  </div>
+
+  <div class="selected-info hidden" id="selected-subject-info">Selected Subject: </div>
+
+  <div class="section-title hidden" id="resource-title">Subject Resources</div>
+  <div class="resources hidden" id="resource-cards">
+    <div class="card">
+      <h3>📘 Notes</h3>
+      <button>View</button>
+      <button>Download</button>
+    </div>
+    <div class="card">
+      <h3>📄 PDFs</h3>
+      <button>View</button>
+      <button>Download</button>
+    </div>
+    <div class="card">
+      <h3>📚 Books</h3>
+      <button>Read</button>
+      <button>Download</button>
+    </div>
+    <div class="card">
+      <h3>🎥 Videos</h3>
+      <button>Watch</button>
+    </div>
+    <div class="card">
+      <h3>✏️ MCQs</h3>
+      <button>Practice</button>
+    </div>
+    <div class="card">
+      <h3>🧪 Formulas</h3>
+      <button>View</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  let selectedClass = "";
+  let selectedSubject = "";
+
+  function showSubjects(classNum) {
+    selectedClass = `Class ${classNum}`;
+    document.getElementById('selected-class-info').textContent = `Selected Class: ${selectedClass}`;
+    document.getElementById('selected-class-info').classList.remove('hidden');
+
+    document.getElementById('subject-buttons').classList.remove('hidden');
+    document.getElementById('subject-title').classList.remove('hidden');
+    document.getElementById('resource-cards').classList.add('hidden');
+    document.getElementById('resource-title').classList.add('hidden');
+    document.getElementById('selected-subject-info').classList.add('hidden');
+  }
+
+  function showResources(subject) {
+    selectedSubject = subject;
+    document.getElementById('selected-subject-info').textContent = `Selected Subject: ${selectedSubject}`;
+    document.getElementById('selected-subject-info').classList.remove('hidden');
+
+    document.getElementById('resource-cards').classList.remove('hidden');
+    document.getElementById('resource-title').classList.remove('hidden');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Subject Formulas - SSS Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f0f4f8;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    /* Class Buttons */
+    .class-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .class-buttons button {
+      padding: 12px 20px;
+      font-weight: 600;
+      border: none;
+      background: linear-gradient(to right, #42a5f5, #7e57c2);
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .class-buttons button:hover {
+      background: linear-gradient(to right, #1e88e5, #6a1b9a);
+    }
+
+    /* Subject Buttons */
+    .subject-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .subject-buttons button {
+      padding: 12px 20px;
+      font-weight: 600;
+      border: none;
+      background: linear-gradient(to right, #ff9800, #f44336);
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .subject-buttons button:hover {
+      background: linear-gradient(to right, #ef6c00, #d32f2f);
+    }
+
+    /* Formula Section Back Button */
+    .back-btn {
+      display: none;
+      margin: 10px auto 30px;
+      padding: 10px 20px;
+      background: linear-gradient(to right, #8e24aa, #3949ab);
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(to right, #6a1b9a, #1e88e5);
+    }
+
+    /* Formula Box */
+    .formula-box {
+      display: none;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    .formula-box h2 {
+      color: #2c3e50;
+    }
+
+    .formula-box ul {
+      margin-left: 20px;
+    }
+
+    .download-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #43a047;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .download-btn:hover {
+      background: #2e7d32;
+    }
+
+    /* TOP-LEFT FIXED BACK BUTTON */
+    .top-left-back {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: linear-gradient(to right, #ff6f00, #f44336);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: 0.3s ease;
+      z-index: 999;
+    }
+
+    .top-left-back:hover {
+      background: linear-gradient(to right, #e65100, #c62828);
+      transform: scale(1.05);
+    }
+
+    @media screen and (max-width: 600px) {
+      .top-left-back {
+        padding: 8px 14px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed Back to Home Button -->
+  <button class="top-left-back" onclick="window.history.back()">← Back</button>
+
+  <div class="container">
+    <h1>📚 All Subject Formulas (Class 6th to 12th)</h1>
+
+    <div class="class-buttons" id="classSection">
+      <button onclick="selectClass('6')">Class 6</button>
+      <button onclick="selectClass('7')">Class 7</button>
+      <button onclick="selectClass('8')">Class 8</button>
+      <button onclick="selectClass('9')">Class 9</button>
+      <button onclick="selectClass('10')">Class 10</button>
+      <button onclick="selectClass('11')">Class 11</button>
+      <button onclick="selectClass('12')">Class 12</button>
+    </div>
+
+    <div class="subject-buttons" id="subjectSection"></div>
+
+    <button class="back-btn" id="backButton" onclick="goBack()">🔙 Back</button>
+
+    <div class="formula-box" id="formulaBox">
+      <h2 id="formulaTitle"></h2>
+      <ul id="formulaList"></ul>
+      <button class="download-btn" onclick="downloadFormulas()">📥 Download PDF</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <script>
+    const subjectsPerClass = {
+      "6": ["Math", "Science"],
+      "7": ["Math", "Science"],
+      "8": ["Math", "Science"],
+      "9": ["Math", "Science", "Physics", "Chemistry", "Biology"],
+      "10": ["Math", "Science", "Physics", "Chemistry", "Biology"],
+      "11": ["Math", "Physics", "Chemistry", "Biology"],
+      "12": ["Math", "Physics", "Chemistry", "Biology"]
+    };
+
+    const formulasData = {
+      "6_Math": ["Perimeter = Sum of all sides", "Area of Square = side × side"],
+      "6_Science": ["Force = Mass × Acceleration"],
+      "10_Physics": ["Speed = Distance / Time", "V = IR"],
+      "12_Chemistry": ["Molarity = Moles / Volume"]
+    };
+
+    let currentClass = null;
+
+    function selectClass(classNo) {
+      currentClass = classNo;
+      const subjectSection = document.getElementById('subjectSection');
+      const formulaBox = document.getElementById('formulaBox');
+      const backButton = document.getElementById('backButton');
+      formulaBox.style.display = 'none';
+      backButton.style.display = 'none';
+      subjectSection.innerHTML = '';
+      const subjects = subjectsPerClass[classNo];
+      subjects.forEach(sub => {
+        const btn = document.createElement('button');
+        btn.textContent = sub;
+        btn.onclick = () => showFormulas(classNo, sub);
+        subjectSection.appendChild(btn);
+      });
+    }
+
+    function showFormulas(classNo, subject) {
+      const key = `${classNo}_${subject}`;
+      const formulas = formulasData[key] || ["Formulas coming soon..."];
+      document.getElementById('formulaTitle').textContent = `📘 ${subject} Formulas (Class ${classNo})`;
+      const list = document.getElementById('formulaList');
+      list.innerHTML = '';
+      formulas.forEach(f => {
+        const li = document.createElement('li');
+        li.textContent = f;
+        list.appendChild(li);
+      });
+      document.getElementById('formulaBox').style.display = 'block';
+      document.getElementById('backButton').style.display = 'block';
+    }
+
+    function downloadFormulas() {
+      const element = document.getElementById('formulaBox');
+      html2pdf().from(element).save('SSS_EDUCATION_FORMULAS.pdf');
+    }
+
+    function goBack() {
+      document.getElementById('formulaBox').style.display = 'none';
+      document.getElementById('backButton').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

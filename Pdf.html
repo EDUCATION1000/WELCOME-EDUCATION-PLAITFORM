@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PDF Zone | SSS Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #e6f0ff, #ffffff);
+      color: #333;
+    }
+
+    header {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+	   font-family: algirian;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      margin-top: 5px;
+	  font-family: algirian;
+          }
+       nav {
+      display: flex;
+      justify-content: center;
+      background: #003580;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    nav a {
+      margin: 5px 10px;
+      background-color: #ffffff;
+      color: #003580;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #007bff;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .class-selector-section {
+      background: linear-gradient(145deg, #ffffff, #dbefff);
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 30px;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .selectors {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .class-selector-section h2 {
+      color: #004aad;
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    .class-selector-section p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .class-selector-section select,
+    .class-selector-section input[type="text"] {
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: 2px solid #004aad;
+      border-radius: 30px;
+      background: #fff;
+      color: #004aad;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .class-selector-section select:hover,
+    .class-selector-section input[type="text"]:hover {
+      background-color: #f0f8ff;
+    }
+
+    .pdf-section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .pdf-grid {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .pdf-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .pdf-card:hover {
+      transform: scale(1.03);
+    }
+
+    .pdf-card h3 {
+      color: #004aad;
+      margin-bottom: 10px;
+    }
+
+    .pdf-card a {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .pdf-card a:hover {
+      background: linear-gradient(135deg, #00c6ff, #007bff);
+      transform: scale(1.05);
+    }
+
+   footer {
+      background: #003580;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.95rem;
+      margin-top: 50px;
+    }
+
+    @media(max-width: 600px){
+      .class-selector-section h2 {
+        font-size: 1.5rem;
+      }
+      .selectors {
+        flex-direction: column;
+        align-items: center;
+      }
+      .class-selector-section select,
+      .class-selector-section input[type="text"] {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SSS EDUCATION</h1>
+    <p>Smart Learning for Smart Students</p>
+  </header>
+  <nav>
+   <a href="index.html">Home</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="About.html">About</a>
+    <a href="Student.html">Student</a>
+    <a href="Notes.html" class="active">Notes</a>
+    <a href="Pdf.html">PDF</a>
+    <a href="Books.html">Books</a>
+    <a href="Class.html">Class</a>
+    <a href="Contact.html">Contact</a>
+  </nav>
+
+  <section class="class-selector-section">
+    <h2>📚 Choose Your Class to View PDFs</h2>
+    <p>Select class and search subject:</p>
+    <div class="selectors">
+      <select id="classSelect" onchange="showPDFs()">
+        <option value="">-- Select Class --</option>
+        <option value="class6">Class 6</option>
+        <option value="class7">Class 7</option>
+        <option value="class8">Class 8</option>
+        <option value="class9">Class 9</option>
+        <option value="class10">Class 10</option>
+        <option value="class11">Class 11</option>
+        <option value="class12">Class 12</option>
+      </select>
+
+      <input type="text" id="searchInput" placeholder="🔍 Search any subject PDF" onkeyup="filterPDFs()" />
+    </div>
+  </section>
+
+  <section class="pdf-section">
+    <!-- Class 6 -->
+    <div id="class6" class="pdf-grid">
+      <div class="pdf-card">
+        <h3>Math - Class 6</h3>
+        <a href="#">Download</a>
+      </div>
+      <div class="pdf-card">
+        <h3>Science - Class 6</h3>
+        <a href="#">Download</a>
+      </div>
+	  <div class="pdf-card">
+        <h3>History - Class 6</h3>
+        <a href="#">Download</a>
+      </div>
+    </div>
+
+    <!-- Class 10 -->
+    <div id="class10" class="pdf-grid">
+      <div class="pdf-card">
+        <h3>Math - Class 10</h3>
+        <a href="#">Download</a>
+      </div>
+      <div class="pdf-card">
+        <h3>Science - Class 10</h3>
+        <a href="#">Download</a>
+      </div>
+      <div class="pdf-card">
+        <h3>Social Science - Class 10</h3>
+        <a href="#">Download</a>
+      </div>
+    </div>
+
+    <!-- Class 12 -->
+    <div id="class12" class="pdf-grid">
+      <div class="pdf-card">
+        <h3>Physics - Class 12</h3>
+        <a href="#">Download</a>
+      </div>
+      <div class="pdf-card">
+        <h3>Chemistry - Class 12</h3>
+        <a href="#">Download</a>
+      </div>
+      <div class="pdf-card">
+        <h3>Math - Class 12</h3>
+        <a href="#">Download</a>
+      </div>
+      <div class="pdf-card">
+        <h3>Biology - Class 12</h3>
+        <a href="#">Download</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 SSS Education. All rights reserved.
+  </footer>
+
+  <script>
+    function showPDFs() {
+      const selected = document.getElementById("classSelect").value;
+      const allGrids = document.querySelectorAll(".pdf-grid");
+      allGrids.forEach(grid => grid.style.display = "none");
+      if (selected) {
+        document.getElementById(selected).style.display = "grid";
+        filterPDFs(); // apply filter again on selection change
+      }
+    }
+
+    function filterPDFs() {
+      const selectedClass = document.getElementById("classSelect").value;
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const classGrid = document.getElementById(selectedClass);
+      if (!classGrid) return;
+
+      const cards = classGrid.querySelectorAll(".pdf-card");
+      cards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        if (title.includes(query)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
